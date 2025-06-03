@@ -122,7 +122,7 @@ alias eamcs=emacs
 
 alias ls="gls --color=auto"
 
-alias pstation='caffeinate -dis ssh -t -l pkryger -p 222 192.168.1.67 env PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin zsh -l'
+alias pstation='caffeinate -dis ssh -t -l pkryger -p 222 192.168.1.67 env PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin SHELL=/usr/local/bin/zsh /usr/local/bin/zsh -l'
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
