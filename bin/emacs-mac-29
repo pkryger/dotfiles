@@ -2,10 +2,10 @@
 
 # Adapted from https://gist.github.com/railwaycat/4043945#gistcomment-1456680
 
-emacs_app=/Applications/Emacs.app
+emacs_app=/Applications/Emacs-mac-29.app
 
 if [ ! -x $emacs_app ]; then
-  echo "Emacs.app not found" >&2
+  echo "Emacs-mac-29.app not found" >&2
   exit 1
 fi
 
