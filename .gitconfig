@@ -3,3 +3,10 @@
 [user]
     email = pkryger@gmail.com
 	name = Przemysław Kryger
+
+[alias]
+    # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
+    # As per https://difftastic.wilfred.me.uk/git.html#regular-usage
+    dlog = -c diff.external=difft log --ext-diff
+    dshow = -c diff.external=difft show --ext-diff
+    ddiff = -c diff.external=difft diff --ext-diff
