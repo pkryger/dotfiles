@@ -95,7 +95,7 @@ source $ZSH/oh-my-zsh.sh
 # else
 #   export EDITOR='mvim'
 # fi
-_emacs="${HOMEBREW_PREFIX}/bin/emacs --quick -nw -l ~/.emacs-sanity/sanity.el"
+_emacs="${HOMEBREW_PREFIX}/bin/emacs -nw --init-directory=~/.emacs-sanity"
 _emacsclient="${HOMEBREW_PREFIX}/bin/emacsclient -t -a "'"'${_emacs}'"'
 export ALTERNATE_EDITOR=vi
 export EDITOR=${_emacsclient}       # $EDITOR should open in terminal
