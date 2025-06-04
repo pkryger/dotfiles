@@ -1,0 +1,15 @@
+#+STARTUP: showeverything
+#+STARTUP: literallinks
+#+OPTIONS: toc:nil num:nil author:nil
+* Personal dotfiles
+:PROPERTIES:
+:CUSTOM_ID: personal-dotfiles
+:END:
+
+TL;DR
+#+begin_src bash
+cd
+git clone https://github.com/pkryger/dotfiles.git
+cd dotfiles
+stow .
+#+end_src
