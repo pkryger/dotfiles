@@ -9,6 +9,11 @@
     # repositories
     attributesfile = ~/.gitattributes_global
 
+    # -X: Keep the content visible after closing the pager
+    # -R: Ensures that color codes and other control characters in the output
+    #  (e.g., from 'git diff --color') are properly displayed in the pager.
+    pager = less -X -R
+
 # Custrom drivers for git diff/merge. With this drivers, Git can display diffs
 # at the function level, making them cleaner and more relevant. It highlights
 # changes within the function, rather than showing the entire function as
