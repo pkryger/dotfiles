@@ -22,6 +22,20 @@
     # unversioned.
     precomposeunicode = false
 
+    # Preloads the index into memory for improved performance when running Git
+    # commands like status and diff. Setting this to true will make Git load
+    # the index into memory early in the execution of commands. This can lead
+    # to performance improvements for operations that involve the index,
+    # especially in repositories with a large number of files.
+    preloadindex = true
+
+    # Enables the untracked cache to speed up performance when checking for
+    # untracked files (default: false)
+    #
+    # This can be beneficial in large repositories where `git status` is run
+    # frequently, as it reduces the time spent scanning for untracked files.
+    untrackedCache = true
+
 [log]
     # Display dates as YYYY-MM-DD
     date = iso
