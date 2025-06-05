@@ -40,6 +40,22 @@
     # frequently, as it reduces the time spent scanning for untracked files.
     untrackedCache = true
 
+[pack]
+    # Configures Git to auto-detect the number of CPUs and set the number of
+    # threads accordingly.
+    threads = 0
+
+    # Allocate up to 5GB as the amount of memory consumed by each thread in
+    # git-pack-objects for pack window memory when no limit is specified on the
+    # command line. This enhances Git’s efficiency for large repositories.
+    windowMemory = 5g
+
+    # The packSizeLimit configuration in Git determines the maximum size of a
+    # packfile that Git will generate. A packfile is a file that contains a
+    # collection of objects, such as commits, trees, and blobs, in a compressed
+    # format.
+    packSizeLimit = 2g
+
 [log]
     # Display dates as YYYY-MM-DD
     date = iso
