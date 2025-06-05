@@ -51,6 +51,9 @@
     # push' to work without specifying the remote/branch
     autoSetupMerge = true
 
+[grep]
+    lineNumber = true
+
 # Custrom drivers for git diff/merge. With this drivers, Git can display diffs
 # at the function level, making them cleaner and more relevant. It highlights
 # changes within the function, rather than showing the entire function as
