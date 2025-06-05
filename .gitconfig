@@ -36,13 +36,6 @@
     # especially in repositories with a large number of files.
     preloadindex = true
 
-    # Enables the untracked cache to speed up performance when checking for
-    # untracked files (default: false)
-    #
-    # This can be beneficial in large repositories where `git status` is run
-    # frequently, as it reduces the time spent scanning for untracked files.
-    untrackedCache = true
-
 [pack]
     # Configures Git to auto-detect the number of CPUs and set the number of
     # threads accordingly.
