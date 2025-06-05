@@ -93,6 +93,37 @@
     # rebase is complete, the stash is reapplied.
     autoStash = true
 
+[diff]
+    # Diff algorithm for improved diff accuracy, especially in detecting moved
+    # code blocks.
+    #
+    # Patience diff is better at handling reordered text blocks by identifying
+    # unique lines first and using a longest-increasing subsequence algorithm
+    # for optimal alignment. It results in more intuitive and human-readable
+    # diffs.  Compared to histogram-based algorithms, patience diff focuses on
+    # matching meaningful lines, avoiding superficial matches, which leads to
+    # more accurate content representation.
+    #
+    algorithm = histogram
+    # algorithm = patience
+
+    # Enable highlighting of moved lines in diffs. This helps identify blocks
+    # of code that have been moved within a file, making it easier to track
+    # code movement and understand refactoring changes.  Values: no, default,
+    # plain, blocks, zebra, dimmed-zebra Details: `man git-diff`
+    colorMoved = plain
+
+    # Configures Git to detect file copies in addition to renames during diff
+    # generation. This helps identify files that were copied, improving the
+    # accuracy of the diff output for changes involving file copying.
+    renames = copies
+
+    # Sets the maximum number of renames to detect in a diff. When there are
+    # more than this number of renames, Git will stop trying to detect renames
+    # to avoid performance degradation. The default is 1000, but increasing it
+    # can help in repos with many file renames.
+    renameLimit = 2400
+
 # Custrom drivers for git diff/merge. With this drivers, Git can display diffs
 # at the function level, making them cleaner and more relevant. It highlights
 # changes within the function, rather than showing the entire function as
