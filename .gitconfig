@@ -14,6 +14,14 @@
     #  (e.g., from 'git diff --color') are properly displayed in the pager.
     pager = less -X -R
 
+    # Displays non-ASCII file names in their original form instead of quoted
+    # octal sequences.
+    quotepath = off
+
+    # Prevent showing files whose names contain non-ASCII symbols as
+    # unversioned.
+    precomposeunicode = false
+
 [log]
     # Display dates as YYYY-MM-DD
     date = iso
