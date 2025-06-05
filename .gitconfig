@@ -9,6 +9,10 @@
     # repositories
     attributesfile = ~/.gitattributes_global
 
+    # Specifies a global ignore file for patterns to exclude across all
+    # repositories.
+    excludesfile = ~/.gitignore_global
+
     # -X: Keep the content visible after closing the pager
     # -R: Ensures that color codes and other control characters in the output
     #  (e.g., from 'git diff --color') are properly displayed in the pager.

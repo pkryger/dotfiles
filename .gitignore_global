@@ -1,0 +1,46 @@
+# General
+ctags
+tags
+
+# Editors
+*~
+*.swp
+*.swo
+*#
+
+# Ansible
+*.log
+*.retry
+
+# Emacs
+flymake_*
+flycheck_*
+*.elc
+.cask/
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+.coverage
+
+# Ruby
+*.rbc
+
+# Compilers
+*.class
+*.o
+*.a
+*.so
+
+# macOS
+.DS_Store
+
+# Windows
+Thumbs.db
+Desktop.ini
+ehthumbs.db
+Thumbs.db
+
+# VCS
+.svn/
