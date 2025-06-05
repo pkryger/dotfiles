@@ -1,3 +1,6 @@
+# iTerm2 color schemes
+[a-z-]+\.itermcolors
+
 # The 24-bit colors on terminal
 xterm-24bit\.terminfo
 
