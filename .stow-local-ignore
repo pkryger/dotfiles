@@ -1,3 +1,6 @@
+# The 24-bit colors on terminal
+xterm-24bit\.terminfo
+
 # The defaults as per `(stow) Types And Syntax Of Ignore Lists`
 RCS
 .+,v
