@@ -54,6 +54,37 @@
     # push' to work without specifying the remote/branch
     autoSetupMerge = true
 
+[merge]
+    # Uses the 'zdiff3' conflict style for merges, which includes additional
+    # context by showing the base, local, and remote versions of conflicting
+    # changes in a more readable format, making it easier to resolve complex
+    # conflicts.
+    conflictStyle = zdiff3
+
+    # Before executing a merge, automatically stash all uncommitted changes in
+    # the working directory and index. This ensures the merge proceeds without
+    # interference from local modifications. Once the merge completes, the
+    # stashed changes are reapplied, restoring the developer's original working
+    # state.
+    autoStash = true
+
+    # Display a brief summary describing what was merged. This includes
+    # information such as the merged branch names and the number of commits.
+    summary = true
+
+    # Display a diffstat after the merge completes, which summarizes the
+    # changes made, showing how many lines were added and removed in each file.
+    diffstat = true
+
+    # Include up to 60 commit messages from the merged branch in the merge
+    # commit message. This provides historical context and helps reviewers
+    # understand the scope of the merge.
+    log = 60
+
+    # Enables the inclusion of branch descriptions in merge commit messages,
+    # providing more context about the branches being merged.
+    branchdesc = true
+
 [grep]
     lineNumber = true
 
