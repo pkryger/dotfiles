@@ -4,6 +4,9 @@
     email = pkryger@gmail.com
 	name = Przemysław Kryger
 
+# Most of the following configuration comes from James Cherti dotfiles
+# https://github.com/jamescherti/jc-dotfiles/blob/df5e42f/.gitconfig
+
 [core]
     # Use a global gitattributes file for applying attribute rules to all
     # repositories
