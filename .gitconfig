@@ -31,6 +31,17 @@
 [diff "texinfo"]
       xfuncname = ^@node[[:space:]]+([^,[:space:]][^,]+)
 
+[rerere]
+    # The "reuse recorded resolution" (rerere) feature, which helps Git
+    # automatically resolve merge conflicts by reusing previously recorded
+    # conflict resolutions. The setting enabled = 1 indicates that the rerere
+    # feature is enabled.
+    enabled = 1
+
+    # After a conflict is resolved manually, Git will automatically store the
+    # resolution in the rerere cache, making it available for future use.
+    autoUpdate = true
+
 [alias]
     # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
     # As per https://difftastic.wilfred.me.uk/git.html#regular-usage
