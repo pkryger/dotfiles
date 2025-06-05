@@ -18,6 +18,9 @@
     # Display dates as YYYY-MM-DD
     date = iso
 
+[init]
+    defaultBranch = main
+
 [push]
     # This configuration automatically pushes the current branch, which helps
     # prevent the error: “fatal: The current branch BRANCH has no upstream
