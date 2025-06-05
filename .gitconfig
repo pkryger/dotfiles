@@ -4,6 +4,33 @@
     email = pkryger@gmail.com
 	name = Przemysław Kryger
 
+[core]
+    # Use a global gitattributes file for applying attribute rules to all
+    # repositories
+    attributesfile = ~/.gitattributes_global
+
+# Custrom drivers for git diff/merge. With this drivers, Git can display diffs
+# at the function level, making them cleaner and more relevant. It highlights
+# changes within the function, rather than showing the entire function as
+# modified, which improves the clarity of code reviews and merges.
+[diff "elisp"]
+       xfuncname = ^\\([^[:space:]]*def[^[:space:]]+[[:space:]]+([^()[:space:]]+)
+
+[diff "cpp"]
+      xfuncname = "!^[ \\t]*[A-Za-z_][A-Za-z_0-9]*:[[:space:]]*($|/[/*])\n^((::[[:space:]]*)?[A-Za-z_][A-Za-z_0-9]*[[:space:]]*\\(.*)$\n^((#define[[:space:]]|DEFUN).*)$"
+
+[diff "m4"]
+      xfuncname = ^((m4_)?define|A._DEFUN(_ONCE)?)\\([^),]*
+
+[diff "make"]
+      xfuncname = ^([$.[:alnum:]_].*:|[[:alnum:]_]+[[:space:]]*([*:+]?[:?]?|!?)=|define .*)
+
+[diff "shell"]
+      xfuncname = ^([[:space:]]*[[:alpha:]_][[:alnum:]_]*[[:space:]]*\\(\\)|[[:alpha:]_][[:alnum:]_]*=)
+
+[diff "texinfo"]
+      xfuncname = ^@node[[:space:]]+([^,[:space:]][^,]+)
+
 [alias]
     # Difftastic aliases, so `git dlog` is `git log` with difftastic and so on.
     # As per https://difftastic.wilfred.me.uk/git.html#regular-usage
