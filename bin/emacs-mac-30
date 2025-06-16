@@ -4,9 +4,9 @@
 
 emacs_app=/Applications/Emacs-mac-30.app
 if [ ! -e "${emacs_app}" ]; then
-    emacs_app="$(brew --prefix)/Cellar/emacs-mac-exp@30/$(brew info --json emacs-mac-exp@30 | jq --raw-output0 '.[0].installed.[0].version')"
-    if [ -e "${emacs-app}" ]; then
-        echo "Using ${emacs-app}" >&2
+    emacs_app="$(brew --prefix)/Cellar/emacs-mac-exp@30/$(brew info --json emacs-mac-exp@30 | jq --raw-output0 '.[0].installed.[0].version')/Emacs.app"
+    if [ -e "${emacs_app}" ]; then
+        echo "Using ${emacs_app}" >&2
     fi
 fi
 
