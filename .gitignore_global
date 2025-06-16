@@ -17,6 +17,8 @@ flymake_*
 flycheck_*
 *.elc
 .cask/
+*-autoloads.el
+*-pkg.el
 
 # Python
 __pycache__/
