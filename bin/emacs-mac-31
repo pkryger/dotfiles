@@ -1,0 +1,38 @@
+#!/bin/sh
+
+# Adapted from https://gist.github.com/railwaycat/4043945#gistcomment-1456680
+
+emacs_app=/Applications/Emacs-mac-31.app
+if [ ! -e "${emacs_app}" ]; then
+    emacs_app="$(brew --prefix)/Cellar/emacs-mac-exp@31/$(brew info --json emacs-mac-exp@31 | jq --raw-output0 '.[0].installed.[0].version')"
+    if [ -e "${emacs-app}" ]; then
+        echo "Using ${emacs-app}" >&2
+    fi
+fi
+
+if [ ! -x "${emacs_app}" ]; then
+  echo "Emacs-mac-31.app not found" >&2
+  exit 1
+fi
+
+/usr/bin/osascript -e "tell application \"$emacs_app\" to activate" &
+
+if [ $# -gt 0 ]; then
+  tempfiles=()
+
+  while IFS= read -r filename; do
+    [[ "$filename" =~ ^-.* ]] && continue
+
+    if [ ! -f "$filename" ]; then
+      tempfiles+=("$filename")
+      /usr/bin/touch "$filename"
+    fi
+
+    file=$(realpath "${filename}")
+    /usr/bin/osascript -e "tell application \"$emacs_app\" to open POSIX file \"$file\""
+  done <<< "$(printf '%s\n' "$@")"
+
+  for tempfile in "${tempfiles[@]}"; do
+    [ ! -s "$tempfile" ] && /bin/rm "$tempfile"
+  done
+fi &
