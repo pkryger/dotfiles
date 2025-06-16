@@ -3,8 +3,14 @@
 # Adapted from https://gist.github.com/railwaycat/4043945#gistcomment-1456680
 
 emacs_app=/Applications/Emacs-mac-30.app
+if [ ! -e "${emacs_app}" ]; then
+    emacs_app="$(brew --prefix)/Cellar/emacs-mac-exp@30/$(brew info --json emacs-mac-exp@30 | jq --raw-output0 '.[0].installed.[0].version')"
+    if [ -e "${emacs-app}" ]; then
+        echo "Using ${emacs-app}" >&2
+    fi
+fi
 
-if [ ! -x $emacs_app ]; then
+if [ ! -x "${emacs_app}" ]; then
   echo "Emacs-mac-30.app not found" >&2
   exit 1
 fi
@@ -22,7 +28,7 @@ if [ $# -gt 0 ]; then
       /usr/bin/touch "$filename"
     fi
 
-    file=$(echo $(cd $(dirname "$filename") && pwd -P)/$(basename "$filename"))
+    file=$(realpath "${filename}")
     /usr/bin/osascript -e "tell application \"$emacs_app\" to open POSIX file \"$file\""
   done <<< "$(printf '%s\n' "$@")"
 
