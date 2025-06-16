@@ -1,4 +1,4 @@
-personal_ws-1.1 en 16 
+personal_ws-1.1 en 17 
 Exordium
 Exordium's
 Kryger
@@ -13,5 +13,6 @@ fontify
 init
 linter
 magit
+optimalization
 plist
 qux
