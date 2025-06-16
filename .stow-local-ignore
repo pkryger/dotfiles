@@ -4,6 +4,9 @@
 # The 24-bit colors on terminal
 xterm-24bit\.terminfo
 
+# Whatever goes to root directory
+^root
+
 # The defaults as per `(stow) Types And Syntax Of Ignore Lists`
 RCS
 .+,v

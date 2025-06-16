@@ -1,0 +1,7 @@
+((nil . ((tab-width . 2)
+         (sh-basic-offset . 2)
+         (fill-column . 118)))
+ (bash-ts-mode . ((apheleia-formatter . shfmt-homebrew)
+                  (mode . apheleia)))
+ (ruby-ts-mode . ((apheleia-formatter . rubocop-homebrew)
+                  (mode . apheleia))))
