@@ -11,5 +11,6 @@ TL;DR
 cd
 git clone https://github.com/pkryger/dotfiles.git
 cd dotfiles
-stow .
+stow -t ~ .
+stow -d root -t / .
 #+end_src
