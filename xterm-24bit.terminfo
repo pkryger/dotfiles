@@ -1,3 +1,8 @@
+# To compile: tic -x xterm-24bit
+# To use: export TERM=xterm-24bit
+# and possibly (e.g., on Debian conatiner ): export TERMINFO=/etc/terminfo
+# See also: https://www.gnu.org/software/emacs/manual/html_node/efaq/Colors-on-a-TTY.html
+
 xterm-24bit|xterm with 24-bit direct color mode,
    use=xterm-256color,
    sitm=\E[3m,
