@@ -7,6 +7,9 @@ xterm-24bit\.terminfo
 # Whatever goes to root directory
 ^root
 
+# the .git directories
+^gh-dotgit
+
 # The defaults as per `(stow) Types And Syntax Of Ignore Lists`
 RCS
 .+,v

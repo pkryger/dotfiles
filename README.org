@@ -6,11 +6,29 @@
 :CUSTOM_ID: personal-dotfiles
 :END:
 
-TL;DR
+TL;DR, to restore all links in this repository do:
 #+begin_src bash
 cd
 git clone https://github.com/pkryger/dotfiles.git
 cd dotfiles
 stow -t ~ .
 stow -d root -t / .
+#+end_src
+
+Private files under =.git= directories in =~/gh= need to be stored in
+=gh-dotfiles=. For example =~/gh/foo/bar/.git/info/exclude= becomes
+=gh-dotgit/foo/bar/info/exclude= (note: the =.git= has been removed, due to how
+cumbersome is to keep it version controlled in this repository). To stow it,
+the following can be used:
+
+#+begin_src bash
+cd "${HOME}/dotfiles"
+for directory in gh-dotgit/*/*; do
+    target="${HOME}/gh/$(echo "${directory}" | sed -e 's|[^/]*/||')/.git"
+    if [ -d "${target}" ]; then
+        dir=$(dirname "$(git rev-parse --show-toplevel)/${directory}")
+        package=$(basename "${directory}")
+        stow -n -t "${target}" -d "${dir}" "${package}"
+    fi
+done
 #+end_src
