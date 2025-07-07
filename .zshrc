@@ -186,9 +186,12 @@ fi
 
 # zsh-fast-syntax-highlighting needs to be added after
 # zsh-autosuggestions. Otherwise, command highlighting is not updated when a
-# suggestion is accepted (for example with C-e or C-f).
+# suggestion is accepted (for example with C-e or C-f).  Also on nix, it is
+# installed in a different location and it has to be loaded from it.
 if [ -f ${_prefix}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]; then
     source ${_prefix}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+elif [ -f ${_prefix}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh ]; then
+    source ${_prefix}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
 else
     echo "Missing zsh-fast-syntax-highlighting. Install it with 'brew install zsh-fast-syntax-highlighting'"
 fi
