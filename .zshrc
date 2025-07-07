@@ -189,6 +189,8 @@ fi
 # suggestion is accepted (for example with C-e or C-f).
 if [ -f ${_prefix}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]; then
     source ${_prefix}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+elif [ -f ${_prefix}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh ]; then
+    source ${_prefix}/share/zsh/site-functions/fast-syntax-highlighting.plugin.zsh
 else
     echo "Missing zsh-fast-syntax-highlighting. Install it with 'brew install zsh-fast-syntax-highlighting'"
 fi
