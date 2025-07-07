@@ -176,8 +176,8 @@ fi
 # zsh-fast-syntax-highlighting needs to be added after
 # zsh-autosuggestions. Otherwise, command highlighting is not updated when a
 # suggestion is accepted (for example with C-e or C-f).
-if [ -f ${HOMEBREW_PREFIX}/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]; then
-    source ${HOMEBREW_PREFIX}/opt/zsh-fast-syntax-highlighting/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+if [ -f ${HOMEBREW_PREFIX}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]; then
+    source ${HOMEBREW_PREFIX}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 else
     echo "Missing zsh-fast-syntax-highlighting. Install it with 'brew install zsh-fast-syntax-highlighting'"
 fi
