@@ -156,3 +156,9 @@ eval "$(direnv hook zsh)"
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
 [[ $(toe | grep xterm-24bit) ]] && export TERM=xterm-24bit
+
+if [ -f ${HOMEBREW_PREFIX}/share/zsh-autopair/autopair.zsh ]; then
+    source ${HOMEBREW_PREFIX}/share/zsh-autopair/autopair.zsh
+else
+    echo "Missing zsh-autopair. Install it with 'brew install zsh-autopair'"
+fi
