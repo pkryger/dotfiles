@@ -82,8 +82,13 @@ plugins=(git brew macos colored-man-pages github docker)
 
 source $ZSH/oh-my-zsh.sh
 
-if [ -f ${HOMEBREW_PREFIX}/share/powerlevel10k/powerlevel10k.zsh-theme ]; then
-    source ${HOMEBREW_PREFIX}/share/powerlevel10k/powerlevel10k.zsh-theme
+# By default this is run in the iTerm2 on macOS and the brew plugin form OMZ
+# should set the ${HOMEBREW_PREFIX}.  But allow this to be used in a docker
+# container like https://github.com/pkryger/docker-images/tree/master/emacs
+_prefix=${HOMEBREW_PREFIX:-/opt/nix}
+
+if [ -f ${_prefix}/share/powerlevel10k/powerlevel10k.zsh-theme ]; then
+    source ${_prefix}/share/powerlevel10k/powerlevel10k.zsh-theme
 else
     echo "Missing powerlevel10k. Install it with 'brew install powerlevel10k'"
 fi
@@ -103,8 +108,8 @@ fi
 # else
 #   export EDITOR='mvim'
 # fi
-_emacs="${HOMEBREW_PREFIX}/bin/emacs -nw --init-directory=~/.emacs-sanity"
-_emacsclient="${HOMEBREW_PREFIX}/bin/emacsclient -t -a "'"'${_emacs}'"'
+_emacs="${_prefix}/bin/emacs -nw --init-directory=~/.emacs-sanity"
+_emacsclient="${_prefix}/bin/emacsclient -t -a "'"'${_emacs}'"'
 export ALTERNATE_EDITOR=vi
 export EDITOR=${_emacsclient}       # $EDITOR should open in terminal
 export VISUAL=${HOME}/bin/emacs     # $VISUAL opens in GUI mode
@@ -138,7 +143,7 @@ alias pstation='caffeinate -dis                                                 
                         /usr/local/bin/zsh -l'
 
 if type brew &>/dev/null; then
-  FPATH=${HOMEBREW_PREFIX}/share/zsh-completions:${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}
+  FPATH=${_prefix}/share/zsh-completions:${_prefix}/share/zsh/site-functions:${FPATH}
 
   autoload -Uz compinit
   compinit
@@ -161,14 +166,14 @@ test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell
 
 [[ $(toe | grep xterm-24bit) ]] && export TERM=xterm-24bit
 
-if [ -f ${HOMEBREW_PREFIX}/share/zsh-autopair/autopair.zsh ]; then
-    source ${HOMEBREW_PREFIX}/share/zsh-autopair/autopair.zsh
+if [ -f ${_prefix}/share/zsh-autopair/autopair.zsh ]; then
+    source ${_prefix}/share/zsh-autopair/autopair.zsh
 else
     echo "Missing zsh-autopair. Install it with 'brew install zsh-autopair'"
 fi
 
-if [ -f ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
-    source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+if [ -f ${_prefix}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source ${_prefix}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 else
     echo "Missing zsh-autosuggestions. Install it with 'brew install zsh-autosuggestions'"
 fi
@@ -176,8 +181,8 @@ fi
 # zsh-fast-syntax-highlighting needs to be added after
 # zsh-autosuggestions. Otherwise, command highlighting is not updated when a
 # suggestion is accepted (for example with C-e or C-f).
-if [ -f ${HOMEBREW_PREFIX}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]; then
-    source ${HOMEBREW_PREFIX}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
+if [ -f ${_prefix}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh ]; then
+    source ${_prefix}/share/zsh-fast-syntax-highlighting/fast-syntax-highlighting.plugin.zsh
 else
     echo "Missing zsh-fast-syntax-highlighting. Install it with 'brew install zsh-fast-syntax-highlighting'"
 fi
