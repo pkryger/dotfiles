@@ -162,3 +162,9 @@ if [ -f ${HOMEBREW_PREFIX}/share/zsh-autopair/autopair.zsh ]; then
 else
     echo "Missing zsh-autopair. Install it with 'brew install zsh-autopair'"
 fi
+
+if [ -f ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh ]; then
+    source ${HOMEBREW_PREFIX}/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+else
+    echo "Missing zsh-autosuggestions. Install it with 'brew install zsh-autosuggestions'"
+fi
