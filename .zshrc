@@ -133,7 +133,9 @@ alias emcas=emacs
 alias emasc=emacs
 alias eamcs=emacs
 
-alias ls="gls --color=auto"
+if type gls &>/dev/null; then
+    alias ls="gls --color=auto"
+fi
 
 alias pstation='caffeinate -dis                                                                                         \
                     ssh -t -l pkryger -p 222 192.168.1.67                                                               \
