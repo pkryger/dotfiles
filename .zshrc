@@ -138,7 +138,7 @@ alias pstation='caffeinate -dis                                                 
                         /usr/local/bin/zsh -l'
 
 if type brew &>/dev/null; then
-  FPATH=$(brew --prefix)/share/zsh-completions:$(brew --prefix)/share/zsh/site-functions:${FPATH}
+  FPATH=${HOMEBREW_PREFIX}/share/zsh-completions:${HOMEBREW_PREFIX}/share/zsh/site-functions:${FPATH}
 
   autoload -Uz compinit
   compinit
