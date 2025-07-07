@@ -87,6 +87,8 @@ if [ -f ${HOMEBREW_PREFIX}/share/powerlevel10k/powerlevel10k.zsh-theme ]; then
 else
     echo "Missing powerlevel10k. Install it with 'brew install powerlevel10k'"
 fi
+# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+[[ -f ~/.p10k.zsh ]] && source ~/.p10k.zsh
 
 # User configuration
 
@@ -128,9 +130,6 @@ alias eamcs=emacs
 
 alias ls="gls --color=auto"
 
-
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 alias pstation='caffeinate -dis                                                                                         \
                     ssh -t -l pkryger -p 222 192.168.1.67                                                               \
                     env PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin  \
