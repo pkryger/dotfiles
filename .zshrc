@@ -15,8 +15,8 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time oh-my-zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
+# N.B. Using powerlevel10k below
 # ZSH_THEME="robbyrussell"
-source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
@@ -81,6 +81,12 @@ source /opt/homebrew/share/powerlevel10k/powerlevel10k.zsh-theme
 plugins=(git brew macos colored-man-pages github docker)
 
 source $ZSH/oh-my-zsh.sh
+
+if [ -f ${HOMEBREW_PREFIX}/share/powerlevel10k/powerlevel10k.zsh-theme ]; then
+    source ${HOMEBREW_PREFIX}/share/powerlevel10k/powerlevel10k.zsh-theme
+else
+    echo "Missing powerlevel10k. Install it with 'brew install powerlevel10k'"
+fi
 
 # User configuration
 
