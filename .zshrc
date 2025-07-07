@@ -164,7 +164,9 @@ eval "$(direnv hook zsh)"
 
 test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
 
-[[ $(toe | grep xterm-24bit) ]] && export TERM=xterm-24bit
+if type toe &>/dev/null; then
+    [[ $(toe | grep xterm-24bit) ]] && export TERM=xterm-24bit
+fi
 
 if [ -f ${_prefix}/share/zsh-autopair/autopair.zsh ]; then
     source ${_prefix}/share/zsh-autopair/autopair.zsh
