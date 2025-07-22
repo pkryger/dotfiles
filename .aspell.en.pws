@@ -1,9 +1,11 @@
-personal_ws-1.1 en 17 
+personal_ws-1.1 en 20 
+Dired
 Exordium
 Exordium's
 Kryger
 MELPA
 Przemyslaw
+affixation
 assignees
 difft
 difftastic
@@ -13,6 +15,7 @@ fontify
 init
 linter
 magit
+natively
 optimalization
 plist
 qux
