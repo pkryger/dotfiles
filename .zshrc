@@ -137,6 +137,8 @@ if type gls &>/dev/null; then
     alias ls="gls --color=auto"
 fi
 
+alias ag="ag --color --color-match '1;34'"
+
 alias pstation='caffeinate -dis                                                                                         \
                     ssh -t -l pkryger -p 222 192.168.1.67                                                               \
                     env PATH=/sbin:/bin:/usr/sbin:/usr/bin:/usr/syno/sbin:/usr/syno/bin:/usr/local/sbin:/usr/local/bin  \
