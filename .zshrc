@@ -138,6 +138,7 @@ if type gls &>/dev/null; then
 fi
 
 alias ag="ag --color --color-match '1;34'"
+alias rg="rg --color=always --colors='match:fg:blue'"
 
 alias pstation='caffeinate -dis                                                                                         \
                     ssh -t -l pkryger -p 222 192.168.1.67                                                               \
