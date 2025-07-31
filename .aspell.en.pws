@@ -1,4 +1,4 @@
-personal_ws-1.1 en 20 
+personal_ws-1.1 en 24 
 Dired
 Exordium
 Exordium's
@@ -10,11 +10,15 @@ assignees
 difft
 difftastic
 exordium
+explainer
+explainers
 fontification
 fontify
 init
 linter
 magit
+matcher
+matchers
 natively
 optimalization
 plist
