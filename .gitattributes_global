@@ -1,3 +1,13 @@
+# Ensure bash scripts use LF line endings to support execution on Unix when
+# accessed over a file share from Windows.
+# *.sh text eol=lf
+
+# Ensure batch scripts use CRLF line endings to support execution on Windows
+# when accessed over a file share from Linux.
+# *.[cC][mM][dD] text eol=crlf
+# *.[bB][aA][tT] text eol=crlf
+# *.[iI][cC][sS] text eol=crlf
+
 # Git's builtin diff hunk header styles.
 *[-.]sh diff=shell
 *.ad[abs] diff=ada
