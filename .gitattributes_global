@@ -1,19 +1,5 @@
-*.asc -text -diff
-*.gpg -text -diff
-vault.yml -text -diff
-vault.yaml -text -diff
-
-# Ensure bash scripts use LF line endings to support execution on Unix when
-# accessed over a file share from Windows.
-*.sh text eol=lf
-
-# Ensure batch scripts use CRLF line endings to support execution on Windows
-# when accessed over a file share from Linux.
-*.[cC][mM][dD] text eol=crlf
-*.[bB][aA][tT] text eol=crlf
-*.[iI][cC][sS] text eol=crlf
-
 # Git's builtin diff hunk header styles.
+*[-.]sh diff=shell
 *.ad[abs] diff=ada
 *.[Cch] diff=cpp
 *.cc diff=cpp
@@ -41,7 +27,6 @@ vault.yaml -text -diff
 *[Mm]akefile diff=make
 Makefile.in diff=make
 *.texi diff=texinfo
-*[-.]sh diff=shell
 
 # Certain files should not be treated as text during diffing or merging
 *.bmp binary
