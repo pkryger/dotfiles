@@ -1,0 +1,5 @@
+((nil . ((ispell-local-dictionary . "american")
+         (sentence-end-double-space . t)
+         (fill-column . 80)))
+ (emacs-lisp-mode . ((indent-tabs-mode . nil)
+                     (flycheck-emacs-lisp-load-path . inherit))))
