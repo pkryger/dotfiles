@@ -48,9 +48,9 @@
                                    (("gmail" visible nil nil))))
 
      ;; each topic corresponds to a public imap folder
-     (setopt gnus-topic-alist '(
-                                ("gmail" ; the key of topic
+     (setopt gnus-topic-alist '(("gmail" ; the key of topic
                                  "nnimap+gmail:Important"
+                                 "nnimap+gmail:[Gmail]/Important"
                                  "nnimap+gmail:INBOX"
                                  "nnimap+gmail:promotions"
                                  "nnimap+gmail:emacs-devel"
@@ -58,6 +58,7 @@
                                  "nnimap+gmail:[Gmail]/Drafts"
                                  "nnimap+gmail:[Gmail]/Sent Mail"
                                  "nnimap+gmail:[Gmail]/All Mail"
+                                 "nnimap+gmail:[Gmail]/Notes"
                                  "nnimap+gmail:[Gmail]/Spam"
                                  "nnimap+gmail:[Gmail]/Bin")
                                 ("Gnus")))
